@@ -20,7 +20,7 @@ class DataSender:
         if self.current_index < (len(self.data_chunks)-1):
             self.current_index += 1
             self.current_data = self.data_chunks[self.current_index]
-            self.current_sign = random.randbytes(5)
+            self.current_sign = random.randbytes(6)
             return True
         else:
             return False

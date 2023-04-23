@@ -4,8 +4,8 @@ class DataReceiver:
         self.text = "aaa"
 
     def receive(self, signed_bytes: bytes):
-        body = signed_bytes[:-5]
-        sign = signed_bytes[-5:]
+        body = signed_bytes[:-6]
+        sign = signed_bytes[-6:]
 
         self.stored_bytes.extend(body)
         return sign
