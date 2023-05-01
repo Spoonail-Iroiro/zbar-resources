@@ -4,9 +4,11 @@
 #
 #    pip-compile --no-emit-index-url ./requirements.in
 #
+colorama==0.4.6
+    # via qrcode
 numpy==1.24.3
     # via opencv-python
-opencv-python==4.7.0.72
+opencv-python==4.5.5.64
     # via -r ./requirements.in
 pillow==9.5.0
     # via
@@ -14,9 +16,9 @@ pillow==9.5.0
     #   qrcode
 pypng==0.20220715.0
     # via qrcode
-pyzbar==0.1.9
-    # via -r ./requirements.in
 qrcode[pil]==7.4.2
     # via -r ./requirements.in
 typing-extensions==4.5.0
     # via qrcode
+zbar-lite==0.23.93
+    # via -r ./requirements.in

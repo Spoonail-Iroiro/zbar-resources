@@ -4,6 +4,10 @@
 #
 #    pip-compile --no-emit-index-url --output-file=requirements_dev.txt ./requirements_dev.in
 #
+colorama==0.4.6
+    # via
+    #   -c .\requirements.txt
+    #   pytest
 exceptiongroup==1.1.1
     # via pytest
 iniconfig==2.0.0
