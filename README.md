@@ -1,0 +1,2 @@
+# zbar-resources
+Resources
