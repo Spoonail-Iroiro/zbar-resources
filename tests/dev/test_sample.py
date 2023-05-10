@@ -1,5 +1,5 @@
 import cv2
-from pyzbar.pyzbar import decode, ZBarSymbol
+# from pyzbar.pyzbar import decode, ZBarSymbol
 import qrcode
 import qrcode.util
 from PIL import Image, ImageDraw
@@ -10,6 +10,28 @@ from qrsend.core.data_receiver import DataReceiver
 from ctypes import string_at
 logger = logging.getLogger(__name__)
 
+def test_make_qr(tmp_path):
+    data = b"012345678901234589aaaaabbbbb"
+    sender = DataSender(data, 16)
+
+    chunk = sender.send()
+
+    qrdata = qrcode.util.QRData(chunk)
+
+    qr = qrcode.QRCode(
+        version=22,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+    )
+
+    qr.add_data(qrdata)
+    logger.info(f"Added data {chunk}")
+    qr.make(fit=False)
+
+    img = qr.make_image()
+    image = img._img
+
+    image.save(tmp_path / "test_qr.png")
+    logger.info(f"Exported to: {tmp_path}")
 
 
 def test_qr(tmp_path):

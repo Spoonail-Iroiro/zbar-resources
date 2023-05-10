@@ -1,6 +1,5 @@
---index-url="https://$($env:FURY_AUTH)@spoonail-iroiro.fury.site/pypi/"
---extra-index-url https://pypi.org/simple/
 pillow
 zbar-lite
-opencv-python==4.5.*
+opencv-python-headless==4.5.*
 qrcode[pil]
+PySide6
